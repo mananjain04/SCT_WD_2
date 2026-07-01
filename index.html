@@ -3,29 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stopwatch Pro</title>
+    <title>StopWatch Pro</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="stopwatch-container">
-    <h1>Stopwatch</h1>
-    <div id="display">00:00:00.00</div>
-    <div class="controls">
-        <button id="startBtn" class="btn primary">Start</button>
-        <button id="pauseBtn" class="btn warning">Pause</button>
-        <button id="lapBtn" class="btn secondary">Lap</button>
-        <button id="resetBtn" class="btn danger">Reset</button>
-    </div>
-    
-    <div class="laps-container">
-        <div class="laps-header">
-            <h2>Lap Times</h2>
+<div class="bg-glow"></div>
+
+<div class="app">
+    <h1 class="app-title">⏱ StopWatch Pro</h1>
+
+    <div class="display-wrapper">
+        <!-- Outer animated ring -->
+        <svg class="ring-svg" viewBox="0 0 260 260">
+            <circle class="ring-track" cx="130" cy="130" r="120"/>
+            <circle id="ring-progress" class="ring-fill" cx="130" cy="130" r="120"/>
+        </svg>
+        <div class="display-inner">
+            <div id="time-display">00:00:00<span class="ms">.00</span></div>
+            <div id="status-label">Ready</div>
         </div>
-        <ul id="lapsList"></ul>
+    </div>
+
+    <div class="controls">
+        <button id="resetBtn" class="ctrl-btn reset-btn" title="Reset">
+            <span class="btn-icon">↺</span>
+            <span class="btn-label">Reset</span>
+        </button>
+        <button id="startBtn" class="ctrl-btn start-btn" title="Start">
+            <span class="btn-icon" id="start-icon">▶</span>
+            <span class="btn-label" id="start-label">Start</span>
+        </button>
+        <button id="lapBtn" class="ctrl-btn lap-btn" title="Lap" disabled>
+            <span class="btn-icon">⊕</span>
+            <span class="btn-label">Lap</span>
+        </button>
+    </div>
+
+    <div class="laps-wrapper">
+        <div class="laps-header">
+            <span>Lap Times</span>
+            <span id="lap-count">0 laps</span>
+        </div>
+        <ul id="laps-list">
+            <li class="no-laps">No laps recorded yet.</li>
+        </ul>
     </div>
 </div>
 
