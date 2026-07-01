@@ -1,67 +1,144 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background-color: #f0f2f5;
+    background-color: #0f172a;
+    color: #e2e8f0;
 }
 
 .stopwatch-container {
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: #1e293b;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
     text-align: center;
-    width: 350px;
+    width: 400px;
+    max-width: 90%;
+}
+
+h1 {
+    margin-top: 0;
+    font-weight: 600;
+    color: #94a3b8;
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 #display {
-    font-size: 48px;
-    font-weight: bold;
-    margin: 20px 0;
-    color: #333;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 56px;
+    font-weight: 700;
+    margin: 30px 0;
+    color: #f8fafc;
+    text-shadow: 0 0 10px rgba(255,255,255,0.1);
 }
 
-.controls button {
+.controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    font-family: 'Inter', sans-serif;
     font-size: 16px;
-    padding: 10px 15px;
-    margin: 5px;
+    font-weight: 600;
+    padding: 15px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
-    background-color: #007bff;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn:active {
+    transform: scale(0.96);
+}
+
+.btn.primary {
+    background-color: #3b82f6;
+    color: white;
+    box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.39);
+}
+.btn.primary:hover { background-color: #2563eb; }
+
+.btn.warning {
+    background-color: #f59e0b;
+    color: white;
+    box-shadow: 0 4px 14px 0 rgba(245, 158, 11, 0.39);
+}
+.btn.warning:hover { background-color: #d97706; }
+
+.btn.secondary {
+    background-color: #475569;
     color: white;
 }
+.btn.secondary:hover { background-color: #334155; }
 
-.controls button:hover {
-    background-color: #0056b3;
+.btn.danger {
+    background-color: #ef4444;
+    color: white;
+    box-shadow: 0 4px 14px 0 rgba(239, 68, 68, 0.39);
+}
+.btn.danger:hover { background-color: #dc2626; }
+
+.laps-container {
+    background-color: #0f172a;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-#pauseBtn {
-    background-color: #ffc107;
-    color: #333;
+.laps-header {
+    background-color: #1e293b;
+    padding: 15px;
+    border-bottom: 1px solid #334155;
 }
 
-#resetBtn {
-    background-color: #dc3545;
-}
-
-.laps {
-    margin-top: 20px;
-    text-align: left;
+.laps-header h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #94a3b8;
 }
 
 #lapsList {
     list-style-type: none;
     padding: 0;
+    margin: 0;
     max-height: 200px;
     overflow-y: auto;
 }
 
 #lapsList li {
-    padding: 5px;
-    border-bottom: 1px solid #ccc;
+    padding: 15px 20px;
+    border-bottom: 1px solid #1e293b;
+    font-family: 'Roboto Mono', monospace;
     font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    color: #cbd5e1;
+}
+
+#lapsList li:last-child {
+    border-bottom: none;
+}
+
+/* Custom Scrollbar for laps */
+#lapsList::-webkit-scrollbar {
+    width: 8px;
+}
+#lapsList::-webkit-scrollbar-track {
+    background: #0f172a; 
+}
+#lapsList::-webkit-scrollbar-thumb {
+    background: #334155; 
+    border-radius: 4px;
+}
+#lapsList::-webkit-scrollbar-thumb:hover {
+    background: #475569; 
 }

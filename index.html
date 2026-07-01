@@ -1,7 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Stopwatch</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch Pro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -10,13 +15,16 @@
     <h1>Stopwatch</h1>
     <div id="display">00:00:00.00</div>
     <div class="controls">
-        <button id="startBtn">Start</button>
-        <button id="pauseBtn">Pause</button>
-        <button id="resetBtn">Reset</button>
-        <button id="lapBtn">Lap</button>
+        <button id="startBtn" class="btn primary">Start</button>
+        <button id="pauseBtn" class="btn warning">Pause</button>
+        <button id="lapBtn" class="btn secondary">Lap</button>
+        <button id="resetBtn" class="btn danger">Reset</button>
     </div>
-    <div class="laps">
-        <h2>Laps</h2>
+    
+    <div class="laps-container">
+        <div class="laps-header">
+            <h2>Lap Times</h2>
+        </div>
         <ul id="lapsList"></ul>
     </div>
 </div>
